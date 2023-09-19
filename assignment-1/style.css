@@ -1,4 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;600;700;800&family=Nunito:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
 html {
   height: 100%;
   width: 100%;
+  font-family: "Nunito";
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+th {
+  background: #d3455a;
+  color: #fff;
+}
+
+th,
+td {
+  padding: 10px;
+  border: 1px solid #cdcdcd;
+}
+
+th:first-child,
+td:first-child,
+th:nth-child(2),
+td:nth-child(2) {
+  min-width: 150px;
+  max-width: 30%;
+  width: 100%;
+}
+
+th:last-child, td:last-child {
+  width: 150px;
+}
+
+h1 {
+  font-size: 20px;
+}
+
+h2 {
+  font-size: 18px;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-end {
+  justify-content: end;
+}
+
+.justify-evenly {
+  justify-content: space-evenly;
+}
+
+/* ============== HEADER ============== */
+.container {
+  width: 100%;
+}
+
+.container>header {
+  height: 50px;
+  padding: 16px;
+  border-bottom: 1px solid #cdcdcd;
+}
+
+.logo {
+  margin-right: 10px;
+}
+
+/* ============== MAIN ============== */
+main {
+  padding: 16px;
+}
+
+.main-search {
+  padding: 5px;
+}
+
+.input-field {
+  width: 100%;
+  max-width: 200px;
+}
+
+.input-field>input,
+select {
+  width: 100%;
+  padding: 8px;
+  outline: none;
+  border: 1px solid #cdcdcd;
+  border-radius: 5px;
+}
+
+.btn {
+  margin-left: 10px;
+  padding: 8px 12px;
+  color: #fff;
+  background: #d3455a;
+  border: 1px solid #cdcdcd;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+/* Table */
+table {
+  width: 60%;
+  margin: 20px auto;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+td:last-child {
+  color: #d3455a;
+  cursor: pointer;
+}
+
+table>tbody>tr>.empty-row {
+  height: 100px;
+  text-decoration: none;
+  pointer-events: none;
+}
+
+.empty-row i {
+  font-size: 30px;
+}
+
+.empty-row span {
+  margin-left: 5px;
+  cursor: none;
+}
+
+.input-change {
+  width: 100%;
+  padding: 8px;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* ========== MODAL ADD BOOK ============ */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  inset: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 30%;
+  border-radius: 10px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.main-modal>.input-field {
+  padding: 10px 0;
+  max-width: none;
+}
+
+.main-modal>.input-field>input,
+select {
+  margin-top: 3px;
+}
+
+.main-modal>#btn-book {
+  text-align: right;
+}
+
+/* ========== MODAL DELETE BOOK ============ */
+.main-modal #delete-book>.btn {
+  background: transparent;
+  border: none;
+  color: #d3455a;
+  margin-left: 0;
+  font-weight: 600;
+  ;
+}
+
+.main-modal-content {
+  padding: 10px 0;
+}
+
+#bookname {
+  color: #d3455a;
+  font-weight: 600;
+}
+
+.warning {
+  font-size: 12px;
+  color: #d3455a;
+}
+
+/* Responsive */
+@media (max-width: 920px) {
+  table {
+    width: 80%;
+  }
+}
+
+@media (max-width: 640px) {
+  table {
+    width: 100%;
+  }
 }

@@ -1,14 +1,156 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Bookstore</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
-  </head>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>Bookstore</title>
+        <link href="style.css" rel="stylesheet" type="text/css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+            integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+    </head>
 
-  <body>
-    Hello world
-    <script src="script.js"></script>
-  </body>
+    <body>
+        <!-- Main -->
+        <div class="container">
+            <header class="flex-center justify-between">
+                <div>
+                    <h1>Bookstore</h1>
+                </div>
+                <div class="flex-center">
+                    <div class="logo">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <div class="name">
+                        <span>NAME</span>
+                    </div>
+                </div>
+            </header>
+            <main class="">
+                <div class="main-search flex-center justify-end">
+                    <div class="input-field">
+                        <input
+                            type="search"
+                            placeholder="Search books"
+                            id="search-book"
+                            oninput="searchBooks()"
+                        />
+                    </div>
+                    <div class="btn-field">
+                        <button
+                            id="add-book"
+                            class="btn"
+                            onclick="openModal('modal-add-book')"
+                        >
+                            Add book
+                        </button>
+                    </div>
+                </div>
+                <div class="main-table">
+                    <table id="table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Author</th>
+                                <th>Topic</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="listbook"></tbody>
+                    </table>
+                </div>
+            </main>
+        </div>
+        <!-- Modal Add book -->
+        <div
+            id="modal-add-book"
+            class="modal"
+            onclick="closeModal('modal-add-book')"
+        >
+            <div class="modal-content" onclick="closeModal('modal-add-book')">
+                <div class="flex-center justify-between">
+                    <div class="title-modal">
+                        <h2>Add book</h2>
+                    </div>
+                    <div class="close" onclick="closeModal('modal-add-book')">
+                        &times;
+                    </div>
+                </div>
+                <div class="main-modal">
+                    <div class="input-field">
+                        <label for="name-book">Name</label>
+                        <input
+                            type="text"
+                            id="name-book"
+                            name="name-book"
+                            placeholder="Enter name book"
+                            required
+                        />
+                        <span id="get-name-book" class="warning"></span>
+                    </div>
+                    <div class="input-field">
+                        <label for="author">Author</label>
+                        <input
+                            type="text"
+                            id="author"
+                            name="author"
+                            placeholder="Enter name author"
+                            required
+                        />
+                        <span id="get-author" class="warning"></span>
+                    </div>
+                    <div class="input-field">
+                        <label for="topic">Topic</label>
+                        <select required name="topic" id="topic">
+                            <option value="Book 1">Book 1</option>
+                            <option value="Book 2">Book 2</option>
+                            <option value="Book 3">Book 3</option>
+                        </select>
+                    </div>
+                    <div class="btn-field" id="btn-book">
+                        <button class="btn" onclick="addBook()">Create</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal Delete book -->
+        <div
+            id="modal-delete-book"
+            class="modal"
+            onclick="closeModal('modal-delete-book')"
+        >
+            <div
+                class="modal-content"
+                onclick="closeModal('modal-delete-book')"
+            >
+                <div class="flex-center justify-between">
+                    <div class="title-modal">
+                        <h2>Delete book</h2>
+                    </div>
+                    <div
+                        class="close"
+                        onclick="closeModal('modal-delete-book')"
+                    >
+                        &times;
+                    </div>
+                </div>
+                <div class="main-modal">
+                    <div class="main-modal-content">
+                        <p>
+                            Do you want to delete <span id="bookname"></span>?
+                        </p>
+                    </div>
+                    <div
+                        id="btn-delete-modal"
+                        class="flex-center justify-between"
+                    ></div>
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
 </html>
