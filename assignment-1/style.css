@@ -27,13 +27,12 @@ th:first-child,
 td:first-child,
 th:nth-child(2),
 td:nth-child(2) {
-  min-width: 150px;
-  max-width: 30%;
+  max-width: 28%;
   width: 100%;
 }
 
 th:last-child, td:last-child {
-  width: 150px;
+  max-width: 150px;
 }
 
 h1 {
@@ -229,10 +228,34 @@ select {
   table {
     width: 80%;
   }
+
+  .modal-content {
+    width: 50%;
+  }
 }
 
 @media (max-width: 640px) {
+  body {
+    font-size: 14px;
+  }
   table {
     width: 100%;
+  }
+  th:first-child,
+  td:first-child,
+  th:nth-child(2),
+  td:nth-child(2) {
+    max-width: 25%;
+    width: 100%;
+  }
+
+  .modal-content {
+    width: 80%;
+  }
+}
+
+@media (max-width: 440px) {
+  td:last-child > span > div {
+    flex-direction: column;
   }
 }
