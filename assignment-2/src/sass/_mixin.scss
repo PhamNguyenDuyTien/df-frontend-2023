@@ -1,0 +1,12 @@
+@import "./variable";
+
+@mixin flexProperties ($align: center, $justify: center, $direction: row) {
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
+    flex-direction: $direction;
+}
+
+@mixin borderMain {
+    border: 1px solid get-color("gray");
+}

@@ -1,0 +1,133 @@
+@use "../../sass/" as *;
+@import "../../sass/responsive";
+
+.bookstore {
+    padding: 16px;
+
+    &-header {
+        @include flexProperties($justify: flex-end);
+
+        &-search {
+            margin-right: 5px;
+            width: 100%;
+            max-width: 200px;
+        }
+    }
+
+    &-table {
+        table {
+            margin: 20px auto;
+            text-align: center;
+            border-collapse: collapse;
+            @include xsm {
+                width: 100%;
+            }
+            
+            @include sm {
+                width: 90%;
+            }
+
+            @include lmd {
+                width: 60%;
+            }
+            
+        }
+
+        th,
+        td {
+            &:first-child,
+            &:nth-child(2) {
+                max-width: 33%;
+                width: 100%;
+            }
+
+            &:nth-child(3) {
+                @include sm-down {
+                    max-width: 24%;
+                }
+                max-width: 16%;
+                width: 100%;
+            }
+
+            &:last-child {
+                @include sm-down {
+                    max-width: 10%;
+                }
+                max-width: 28%;
+                width: 100%;
+            }
+        }
+
+        tbody {
+            td:last-child {
+                .action {
+                    @include flexProperties($justify: space-evenly);
+                    @include sm-down {
+                        @include flexProperties($direction: column)
+                    }
+                    div {
+                        &:first-child {
+                            span {
+                                color: get-color("blue");
+                                font-weight: 600;
+                                margin: 0 2px;
+                            }
+                        }
+                        
+                        &:last-child {
+                            span {
+                                color: get-color("bg-main");
+                                font-weight: 600;
+                                margin: 0 2px;
+                            }
+                        }
+
+                        span:hover {
+                            opacity: 0.7;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+
+            .empty-row {
+                height: 100px;
+                text-decoration: none;
+                pointer-events: none;
+                @include flexProperties();
+
+                .icon {
+                    font-size: 30px;
+                }
+
+                span {
+                    margin-left: 5px;
+                    cursor: none;
+                }
+            }
+        }
+    }
+
+    &-pagination {
+        max-width: 150px;
+        margin: 20px auto;
+        .pagination {
+            @include flexProperties();
+            li {
+                margin: 0 3px;
+                padding: 5px;
+                cursor: pointer;
+
+                &.active {
+                    border-radius: 5px;
+                    background: get-color("bg-main");
+                    color: get-color("white");
+                }
+
+                .icon-pagination {
+                    @include flexProperties();
+                }
+            }
+        }
+    }
+}
