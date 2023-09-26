@@ -1,0 +1,71 @@
+@use '../../sass/' as *;
+@import '../../sass/responsive';
+
+.modal {
+  position: fixed;
+  z-index: 10;
+  inset: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+
+  &-container {
+    background: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    width: 30%;
+    border-radius: 10px;
+    @include borderMain();
+
+    &.light {
+      background: get-color('white');
+      color: get-color('black');
+    }
+    &.dark {
+      background: get-color('black');
+      color: get-color('white');
+    }
+
+    &-header {
+      @include flexProperties($justify: space-between);
+      &-close {
+        color: get-color('gray');
+        text-align: right;
+        font-size: 28px;
+        font-weight: bold;
+        background: transparent;
+        border: none;
+
+        &:hover,
+        &:focus {
+          color: get-color('bg-main-1');
+          text-decoration: none;
+          cursor: pointer;
+        }
+      }
+    }
+
+    &-main {
+      &-input {
+        padding: 10px 0;
+        max-width: none;
+
+        input,
+        select {
+          margin-top: 3px;
+        }
+
+        .warning {
+          color: get-color('bg-main');
+        }
+      }
+
+      &-btn {
+        text-align: right;
+        &>.btn {
+          background: get-color('bg-main');
+          color: #fff;
+        }
+      }
+    }
+  }
+}

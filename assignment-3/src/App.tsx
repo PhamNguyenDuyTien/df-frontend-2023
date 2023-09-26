@@ -1,25 +1,17 @@
-import logo from './logo.svg'
 import './App.css'
+import { BooksData } from './Books'
+import Bookstore from './components/Bookstore/Bookstore'
+import Layout from './components/Layout/Layout'
+import { ThemeProvider } from './Context/ThemeContext'
 
 function App() {
+  localStorage.setItem("list-books", JSON.stringify(BooksData))
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider>
+      <Layout>
+        <Bookstore />
+      </Layout>
+    </ThemeProvider>
   )
 }
 
