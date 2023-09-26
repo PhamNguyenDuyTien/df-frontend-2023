@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 const Edit = (props) => {
     const { updateBook, setUpdateBook, styles } = props;

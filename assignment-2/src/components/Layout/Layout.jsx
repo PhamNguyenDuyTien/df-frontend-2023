@@ -25,7 +25,7 @@ const Layout = ({ children }) => {
                             type="checkbox"
                             id="theme-mode"
                             checked={context.theme === "dark" ? true : false}
-                            onClick={context.toggleTheme}
+                            onChange={context.toggleTheme}
                         />
                         <label htmlFor="theme-mode">
                             {context.theme === "dark" ? (
