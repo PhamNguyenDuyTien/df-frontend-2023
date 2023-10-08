@@ -1,0 +1,11 @@
+.close {
+    @apply text-gray text-right text-[28px] font-bold border-none hover:text-main-sub hover:decoration-0 hover:cursor-pointer focus:text-main-sub focus:decoration-0 focus:cursor-pointer
+}
+
+.light {
+    @apply bg-white text-black;
+}
+
+.dark {
+    @apply bg-black text-white;
+}

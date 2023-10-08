@@ -1,0 +1,58 @@
+.light {
+  @apply bg-white;
+}
+
+.light span,
+.light p,
+.light h1,
+.light .icon-user {
+  @apply text-black;
+}
+
+.dark {
+  @apply bg-black;
+}
+
+.dark span,
+.dark p,
+.dark h1,
+.dark .icon-user {
+  @apply text-white;
+}
+
+.icon-dark {
+  @apply absolute top-[50%] left-[23%] translate-x-[-25%] translate-y-[-50%] z-[1] text-xl;
+}
+
+.icon-light {
+  @apply absolute top-[50%] right-[22%] translate-x-[25%] translate-y-[-50%] z-[1] text-xl;
+}
+
+.icon-user {
+  @apply text-[30px] mr-[5px];
+}
+
+.label-theme-mode {
+  @apply relative w-[50px] h-[30px] mr-1 block bg-white rounded-[100px] cursor-pointer shadow-theme-mode;
+}
+
+.label-theme-mode::after {
+  content: '';
+  @apply absolute h-7 w-7 bg-white rounded-[100px] top-[1px] left-5 transition shadow-theme-after;
+}
+
+.theme-mode:checked~.label-theme-mode:after {
+  @apply left-[30px] -translate-x-full bg-linear-1;
+}
+
+.theme-mode:checked~.label-theme-mode {
+  @apply bg-black-1;
+}
+
+.theme-mode:checked+.label-theme-mode {
+  @apply bg-black-1;
+}
+
+.theme-mode {
+  @apply hidden;
+}

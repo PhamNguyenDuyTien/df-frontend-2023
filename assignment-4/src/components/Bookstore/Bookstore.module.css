@@ -1,0 +1,27 @@
+.bookstore-pagination {
+    @apply w-full my-5;
+}
+
+.pagination {
+    @apply flex items-center justify-center;
+}
+
+.pagination li {
+    @apply mx-[3px] p-[5px] cursor-pointer;
+}
+
+.pagination li.active {
+    @apply rounded-[5px] bg-main border border-gray;
+}
+
+.pagination li button {
+    @apply px-[5px];
+}
+
+.pagination li.active span {
+    @apply text-white;
+}
+
+.icon-pagination {
+    @apply flex items-center;
+}

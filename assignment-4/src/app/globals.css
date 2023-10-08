@@ -8,7 +8,7 @@
   --background-end-rgb: 255, 255, 255;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
@@ -24,4 +24,25 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+th,
+td {
+  padding: 10px;
+  border: 1px solid #cdcdcd;
+}
+
+input, select {
+  background: transparent;
+  outline: none;
+  padding: 8px;
+  width: 100%;
+  border: 1px solid #cdcdcd;
+  border-radius: 5px;
+}
+
+@media (max-width: 500px) {
+  th, td {
+    padding: 7px;
+  }
 }
