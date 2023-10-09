@@ -1,7 +1,7 @@
 import React, { MouseEvent, useContext, useRef } from 'react'
+import { usePathname, useRouter } from 'next/navigation'
 import Styles from './Modal.module.css'
 import { Books } from '../../types/books.type'
-import { usePathname, useRouter } from 'next/navigation'
 import { ListBooksContext, ThemeContext } from '../../Context'
 
 interface ModalProps {
@@ -9,10 +9,12 @@ interface ModalProps {
   setOpenModalDelete: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-function accessibleOnClick(handler: (newValue: MouseEvent<HTMLDivElement>) => void) {
+function accessibleOnClick(
+  handler: (newValue: MouseEvent<HTMLDivElement>) => void,
+) {
   return {
-      role: "button",
-      onClick: handler,
+    role: 'button',
+    onClick: handler,
   }
 }
 

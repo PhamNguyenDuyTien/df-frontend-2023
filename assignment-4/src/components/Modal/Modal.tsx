@@ -1,6 +1,6 @@
 import React, { MouseEvent, useContext, useRef } from 'react'
-import Styles from './Modal.module.css'
 import { v4 as uuidv4 } from 'uuid'
+import Styles from './Modal.module.css'
 import { Books } from '../../types/books.type'
 import { ListBooksContext, ThemeContext } from '../../Context'
 
@@ -10,10 +10,12 @@ interface ModalProps {
   addBooks: Books
 }
 
-function accessibleOnClick(handler: (newValue: MouseEvent<HTMLDivElement>) => void) {
+function accessibleOnClick(
+  handler: (newValue: MouseEvent<HTMLDivElement>) => void,
+) {
   return {
-      role: "button",
-      onClick: handler,
+    role: 'button',
+    onClick: handler,
   }
 }
 
@@ -80,72 +82,72 @@ const Modal = (props: ModalProps) => {
           <div className="py-[10px] max-w-none ">
             <label htmlFor="name-book" className={themecontext.styles}>
               Name
+              <input
+                type="text"
+                id="name-book"
+                className={'mt-[3px] ' + `${themecontext.styles}`}
+                name="name-book"
+                placeholder="Enter name book"
+                value={addBooks.nameBooks}
+                onChange={(e) =>
+                  setAddBooks({
+                    ...addBooks,
+                    nameBooks: e.target.value,
+                  })
+                }
+                required
+              />
             </label>
-            <input
-              type="text"
-              id="name-book"
-              className={'mt-[3px] ' + `${themecontext.styles}`}
-              name="name-book"
-              placeholder="Enter name book"
-              value={addBooks.nameBooks}
-              onChange={(e) =>
-                setAddBooks({
-                  ...addBooks,
-                  nameBooks: e.target.value,
-                })
-              }
-              required
-            />
             <span className="text-main" />
           </div>
           <div className="py-[10px] max-w-none">
             <label htmlFor="author" className={themecontext.styles}>
               Author
+              <input
+                type="text"
+                id="author"
+                className={'mt-[3px] ' + `${themecontext.styles}`}
+                name="author"
+                placeholder="Enter name author"
+                value={addBooks.author}
+                onChange={(e) =>
+                  setAddBooks({
+                    ...addBooks,
+                    author: e.target.value,
+                  })
+                }
+                required
+              />
             </label>
-            <input
-              type="text"
-              id="author"
-              className={'mt-[3px] ' + `${themecontext.styles}`}
-              name="author"
-              placeholder="Enter name author"
-              value={addBooks.author}
-              onChange={(e) =>
-                setAddBooks({
-                  ...addBooks,
-                  author: e.target.value,
-                })
-              }
-              required
-            />
             <span className="text-main" />
           </div>
           <div className="py-[10px] max-w-none">
             <label htmlFor="topic" className={themecontext.styles}>
               Topic
+              <select
+                required
+                name="topic"
+                id="topic"
+                className={'mt-[3px] ' + `${themecontext.styles}`}
+                value={addBooks.topic}
+                onChange={(e) =>
+                  setAddBooks({
+                    ...addBooks,
+                    topic: e.target.value,
+                  })
+                }
+              >
+                <option value="Book 1" className={themecontext.bgStyles}>
+                  Book 1
+                </option>
+                <option value="Book 2" className={themecontext.bgStyles}>
+                  Book 2
+                </option>
+                <option value="Book 3" className={themecontext.bgStyles}>
+                  Book 3
+                </option>
+              </select>
             </label>
-            <select
-              required
-              name="topic"
-              id="topic"
-              className={'mt-[3px] ' + `${themecontext.styles}`}
-              value={addBooks.topic}
-              onChange={(e) =>
-                setAddBooks({
-                  ...addBooks,
-                  topic: e.target.value,
-                })
-              }
-            >
-              <option value="Book 1" className={themecontext.bgStyles}>
-                Book 1
-              </option>
-              <option value="Book 2" className={themecontext.bgStyles}>
-                Book 2
-              </option>
-              <option value="Book 3" className={themecontext.bgStyles}>
-                Book 3
-              </option>
-            </select>
           </div>
           <div className="text-right">
             <button

@@ -1,8 +1,8 @@
 import React, { useContext, useState } from 'react'
-import Styles from './Bookstore.module.css'
 import { v4 as uuidv4 } from 'uuid'
-import { Books } from '../../types/books.type'
 import { AiOutlineInbox } from 'react-icons/ai'
+import Styles from './Bookstore.module.css'
+import { Books } from '../../types/books.type'
 import Modal from '../Modal/Modal'
 import Pagination from '../Pagination/Pagination'
 import { ListBooks } from './ListBooks'
@@ -35,7 +35,7 @@ const Bookstore = () => {
     list.nameBooks.toLowerCase().includes(searchBooks.toLowerCase()),
   )
 
-  let currentBooks = newLists.slice(firstBook, lastBook) // những cuốn sách được hiển thị trên UI
+  const currentBooks = newLists.slice(firstBook, lastBook) // những cuốn sách được hiển thị trên UI
 
   const handleChangeSearchBooks = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault()
@@ -86,16 +86,15 @@ const Bookstore = () => {
             <tbody id="listbook">
               {currentBooks.length !== 0 ? (
                 currentBooks.map((book) => (
-                  <ListBooks
-                    key={book.id}
-                    book={book}
-                  />
+                  <ListBooks key={book.id} book={book} />
                 ))
               ) : (
                 <tr>
                   <td colSpan={4}>
                     <div className="flex items-center justify-center h-[100px] decoration-0 pointer-events-none">
-                      <AiOutlineInbox className={'text-3xl mr-1 ' + `${themecontext.styles}`} />
+                      <AiOutlineInbox
+                        className={'text-3xl mr-1 ' + `${themecontext.styles}`}
+                      />
                       <span>No book was found</span>
                     </div>
                   </td>

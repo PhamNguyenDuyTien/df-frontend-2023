@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import React, { useContext, useState } from 'react'
-import { Books } from '../../types/books.type'
 import { BsChevronLeft } from 'react-icons/bs'
+import { Books } from '../../types/books.type'
 import ModalDelete from '../Modal/ModalDelete'
 import { ThemeContext } from '../../Context'
 
@@ -20,7 +20,7 @@ const BookDetails = (props: BookDetailsProps) => {
 
   return (
     <>
-      <div className='p-3'>
+      <div className="p-3">
         <div className="w-fit hover:opacity-70">
           <Link href="/">
             <span className="flex items-center">

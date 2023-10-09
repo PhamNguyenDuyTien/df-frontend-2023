@@ -25,7 +25,7 @@ const Pagination = (props: PaginationProps) => {
   const { newLists, currentPage, setCurrentPage, booksPerPage } = props
 
   const numPages = Math.ceil(newLists.length / booksPerPage) // số trang
-  let totalPages = numPages
+  const totalPages = numPages
 
   const handlePageChange = (pageNumber: number) => {
     setCurrentPage(pageNumber)

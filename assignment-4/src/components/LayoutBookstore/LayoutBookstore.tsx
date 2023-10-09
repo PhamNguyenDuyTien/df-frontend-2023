@@ -1,10 +1,10 @@
 import React, { ChangeEvent, useContext } from 'react'
-import { FCProviderProps } from '../../types/types'
-import { ThemeContext } from '../../Context/ThemeContext'
 import { BsMoon, BsSun } from 'react-icons/bs'
 import { BiUserCircle } from 'react-icons/bi'
-import Styles from './LayoutBookstore.module.css'
 import Link from 'next/link'
+import { FCProviderProps } from '../../types/types'
+import { ThemeContext } from '../../Context/ThemeContext'
+import Styles from './LayoutBookstore.module.css'
 
 const LayoutBookstore = ({ children }: FCProviderProps) => {
   const context = useContext(ThemeContext)
@@ -14,7 +14,7 @@ const LayoutBookstore = ({ children }: FCProviderProps) => {
   return (
     <div
       className={
-        'w-full h-[100vh] ' + 
+        'w-full h-[100vh] ' +
         `${
           context.theme === 'dark' ? `${Styles['dark']}` : `${Styles['light']}`
         }`

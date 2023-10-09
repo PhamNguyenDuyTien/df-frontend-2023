@@ -55,9 +55,15 @@ const Edit = (props: EditProps) => {
             setUpdateBook({ ...updateBook, topic: e.target.value })
           }
         >
-          <option value="Book 1" className={themecontext.bgStyles}>Book 1</option>
-          <option value="Book 2" className={themecontext.bgStyles}>Book 2</option>
-          <option value="Book 3" className={themecontext.bgStyles}>Book 3</option>
+          <option value="Book 1" className={themecontext.bgStyles}>
+            Book 1
+          </option>
+          <option value="Book 2" className={themecontext.bgStyles}>
+            Book 2
+          </option>
+          <option value="Book 3" className={themecontext.bgStyles}>
+            Book 3
+          </option>
         </select>
       </td>
     </>

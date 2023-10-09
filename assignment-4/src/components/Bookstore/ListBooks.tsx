@@ -1,9 +1,8 @@
 import { useContext, useState } from 'react'
+import Link from 'next/link'
 import { Books } from '../../types/books.type'
 import Edit from '../Edit/Edit'
 import ModalDelete from '../Modal/ModalDelete'
-import Link from 'next/link'
-import { stringToRoute } from '../../types/functionType'
 import { ListBooksContext } from '../../Context'
 
 interface ListBooksProps {
