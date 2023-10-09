@@ -31,7 +31,7 @@ const BookDetails = (props: BookDetailsProps) => {
         </div>
         <div className="p-3">
           <div>
-            <h2 className={`${themecontext.styles}` + ' text-xl font-semibold'}>
+            <h2 className={`${themecontext.styles}` + ` text-xl font-semibold`}>
               {currentBooks?.nameBooks}
             </h2>
           </div>

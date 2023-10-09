@@ -1,4 +1,5 @@
 'use client'
+
 import React, { useEffect, useState } from 'react'
 import LayoutBookstore from '../../components/LayoutBookstore/LayoutBookstore'
 import { Books } from '../../types/books.type'
@@ -8,7 +9,7 @@ import NotFound from './not-found'
 
 interface Params {
   params: {
-    detailBooks: string;
+    detailBooks: string
   }
 }
 const Page = ({ params }: Params) => {
@@ -26,7 +27,7 @@ const Page = ({ params }: Params) => {
     }
   }, [params.detailBooks])
 
-  if(currentBooks === undefined) {
+  if (currentBooks === undefined) {
     return <NotFound />
   }
   return (

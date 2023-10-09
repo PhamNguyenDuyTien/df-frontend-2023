@@ -85,7 +85,7 @@ const Modal = (props: ModalProps) => {
               <input
                 type="text"
                 id="name-book"
-                className={'mt-[3px] ' + `${themecontext.styles}`}
+                className={`mt-[3px] ` + `${themecontext.styles}`}
                 name="name-book"
                 placeholder="Enter name book"
                 value={addBooks.nameBooks}
@@ -106,7 +106,7 @@ const Modal = (props: ModalProps) => {
               <input
                 type="text"
                 id="author"
-                className={'mt-[3px] ' + `${themecontext.styles}`}
+                className={`mt-[3px] ` + `${themecontext.styles}`}
                 name="author"
                 placeholder="Enter name author"
                 value={addBooks.author}
@@ -128,7 +128,7 @@ const Modal = (props: ModalProps) => {
                 required
                 name="topic"
                 id="topic"
-                className={'mt-[3px] ' + `${themecontext.styles}`}
+                className={`mt-[3px] ` + `${themecontext.styles}`}
                 value={addBooks.topic}
                 onChange={(e) =>
                   setAddBooks({
