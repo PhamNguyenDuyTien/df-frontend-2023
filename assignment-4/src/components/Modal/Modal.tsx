@@ -1,14 +1,20 @@
-import React, { useContext, useRef } from 'react'
+import React, { MouseEvent, useContext, useRef } from 'react'
 import Styles from './Modal.module.css'
 import { v4 as uuidv4 } from 'uuid'
 import { Books } from '../../types/books.type'
-import { accessibleOnClick } from '../../types/accessibleOnclick'
 import { ListBooksContext, ThemeContext } from '../../Context'
 
 interface ModalProps {
   setOpenModal: React.Dispatch<React.SetStateAction<boolean>>
   setAddBooks: React.Dispatch<React.SetStateAction<Books>>
   addBooks: Books
+}
+
+function accessibleOnClick(handler: (newValue: MouseEvent<HTMLDivElement>) => void) {
+  return {
+      role: "button",
+      onClick: handler,
+  }
 }
 
 const Modal = (props: ModalProps) => {
