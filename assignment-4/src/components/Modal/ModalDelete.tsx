@@ -43,13 +43,8 @@ const ModalDelete = (props: ModalProps) => {
     >
       <div
         className={
-          'my-[15%] mx-auto p-5 lgl:w-[30%] md:w-[50%] sm:w-[70%] w-[90%] rounded-[10px] border border-white '
-           +
-          `${
-            context.theme === 'dark'
-              ? 'bg-black'
-              : 'bg-white'
-          }`
+          'my-[15%] mx-auto p-5 lgl:w-[30%] md:w-[50%] sm:w-[70%] w-[90%] rounded-[10px] border border-white ' +
+          `${context.theme === 'dark' ? 'bg-black' : 'bg-white'}`
         }
         ref={ModalRef}
       >
@@ -67,13 +62,7 @@ const ModalDelete = (props: ModalProps) => {
         </div>
         <div className="p-1">
           <div className="mb-2">
-            <p
-              className={
-                `${
-                // context.theme === 'dark' ? 'text-white' : 'text-black'
-                context.styles
-              }`}
-            >
+            <p className={`${context.styles}`}>
               Do you want to delete{' '}
               <span
                 style={{
