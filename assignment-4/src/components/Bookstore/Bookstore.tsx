@@ -93,7 +93,11 @@ const Bookstore = () => {
                   <td colSpan={4}>
                     <div className="flex items-center justify-center h-[100px] decoration-0 pointer-events-none">
                       <AiOutlineInbox
-                        className={`text-3xl mr-1 ` + `${themecontext.styles}`}
+                        className={
+                          `${'text-3xl mr-1'}` +
+                          `${' '}` +
+                          `${themecontext.styles}`
+                        }
                       />
                       <span>No book was found</span>
                     </div>
