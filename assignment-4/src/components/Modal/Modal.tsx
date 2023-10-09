@@ -86,9 +86,7 @@ const Modal = (props: ModalProps) => {
                 type="text"
                 id="name-book"
                 className={
-                  `${themecontext.styles}` +
-                  `${' '}` + 
-                  `${'mt-[3px]'}`
+                  `${themecontext.styles}` + `${' '}` + `${'mt-[3px]'}`
                 }
                 name="name-book"
                 placeholder="Enter name book"
@@ -111,9 +109,7 @@ const Modal = (props: ModalProps) => {
                 type="text"
                 id="author"
                 className={
-                  `${themecontext.styles}` +
-                  `${' '}` + 
-                  `${'mt-[3px]'}`
+                  `${themecontext.styles}` + `${' '}` + `${'mt-[3px]'}`
                 }
                 name="author"
                 placeholder="Enter name author"
@@ -137,9 +133,7 @@ const Modal = (props: ModalProps) => {
                 name="topic"
                 id="topic"
                 className={
-                  `${themecontext.styles}` +
-                  `${' '}` + 
-                  `${'mt-[3px]'}`
+                  `${themecontext.styles}` + `${' '}` + `${'mt-[3px]'}`
                 }
                 value={addBooks.topic}
                 onChange={(e) =>
